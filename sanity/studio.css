@@ -1,0 +1,338 @@
+/* Modern Clean Dashboard - Inspired by the provided design */
+
+/* Global Reset and Base */
+* {
+  box-sizing: border-box;
+}
+
+/* Main Layout */
+[data-ui="RootLayout"] {
+  background: #f5f7fa !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Top Navigation Bar */
+[data-ui="Navbar"] {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  padding: 12px 24px !important;
+}
+
+/* Sidebar Navigation */
+[data-ui="SideMenu"] {
+  background: #ffffff !important;
+  border-right: 1px solid #e5e7eb !important;
+  width: 240px !important;
+  padding: 20px 0 !important;
+}
+
+/* Navigation Menu Items */
+[data-ui="MenuButton"] {
+  border-radius: 8px !important;
+  margin: 2px 16px !important;
+  padding: 12px 16px !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  color: #6b7280 !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+[data-ui="MenuButton"]:hover {
+  background: #f3f4f6 !important;
+  color: #374151 !important;
+}
+
+[data-ui="MenuButton"][data-selected="true"] {
+  background: #1f2937 !important;
+  color: #ffffff !important;
+}
+
+/* Main Content Area */
+[data-ui="MainLayout"] {
+  background: #f5f7fa !important;
+  padding: 24px !important;
+}
+
+/* Document Lists - Card Grid Layout */
+[data-ui="DocumentList"] {
+  background: transparent !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+  margin: 0 !important;
+}
+
+/* Individual Document Cards */
+[data-ui="DocumentListItem"] {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  border: 1px solid #e5e7eb !important;
+  padding: 20px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 200px !important;
+}
+
+[data-ui="DocumentListItem"]:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-2px) !important;
+  border-color: #d1d5db !important;
+}
+
+/* Document Preview Content */
+[data-ui="DocumentListItem"] h3 {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.4 !important;
+}
+
+[data-ui="DocumentListItem"] p {
+  font-size: 14px !important;
+  color: #6b7280 !important;
+  margin: 0 0 12px 0 !important;
+  line-height: 1.5 !important;
+  flex-grow: 1 !important;
+}
+
+/* Status Badges */
+[data-ui="Badge"] {
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  padding: 4px 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+[data-ui="Badge"][data-tone="positive"] {
+  background: #dcfce7 !important;
+  color: #166534 !important;
+}
+
+[data-ui="Badge"][data-tone="caution"] {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+[data-ui="Badge"][data-tone="primary"] {
+  background: #dbeafe !important;
+  color: #1e40af !important;
+}
+
+/* Form Elements */
+[data-ui="TextInput"], 
+[data-ui="TextArea"], 
+[data-ui="Select"] {
+  border-radius: 8px !important;
+  border: 1px solid #d1d5db !important;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
+  transition: all 0.2s ease !important;
+  background: #ffffff !important;
+}
+
+[data-ui="TextInput"]:focus, 
+[data-ui="TextArea"]:focus, 
+[data-ui="Select"]:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+  outline: none !important;
+}
+
+/* Buttons */
+[data-ui="Button"] {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  padding: 10px 16px !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid transparent !important;
+}
+
+[data-ui="Button"][data-tone="primary"] {
+  background: #1f2937 !important;
+  color: #ffffff !important;
+}
+
+[data-ui="Button"][data-tone="primary"]:hover {
+  background: #111827 !important;
+}
+
+[data-ui="Button"][data-mode="ghost"] {
+  background: transparent !important;
+  color: #6b7280 !important;
+  border-color: #d1d5db !important;
+}
+
+[data-ui="Button"][data-mode="ghost"]:hover {
+  background: #f9fafb !important;
+  color: #374151 !important;
+}
+
+/* Search Input */
+[data-ui="SearchInput"] {
+  border-radius: 8px !important;
+  border: 1px solid #d1d5db !important;
+  background: #ffffff !important;
+  padding: 10px 16px !important;
+  font-size: 14px !important;
+  width: 100% !important;
+  max-width: 400px !important;
+}
+
+[data-ui="SearchInput"]:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+  outline: none !important;
+}
+
+/* Document Editor Panel */
+[data-ui="DocumentPanel"] {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  border: 1px solid #e5e7eb !important;
+  margin: 0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Field Groups */
+[data-ui="FieldGroup"] {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  margin: 16px 0 !important;
+  padding: 16px !important;
+}
+
+/* Cards */
+[data-ui="Card"] {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-ui="Card"]:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Page Headers */
+h1, h2, h3 {
+  color: #111827 !important;
+  font-weight: 600 !important;
+}
+
+/* Breadcrumbs */
+[data-ui="Breadcrumbs"] {
+  margin-bottom: 24px !important;
+}
+
+[data-ui="Breadcrumbs"] a {
+  color: #6b7280 !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+}
+
+[data-ui="Breadcrumbs"] a:hover {
+  color: #374151 !important;
+}
+
+/* Loading States */
+[data-ui="Spinner"] {
+  color: #3b82f6 !important;
+}
+
+/* Tooltips */
+[data-ui="Tooltip"] {
+  background: #1f2937 !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  padding: 6px 8px !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  [data-ui="DocumentList"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  [data-ui="MainLayout"] {
+    padding: 16px !important;
+  }
+  
+  [data-ui="SideMenu"] {
+    width: 200px !important;
+  }
+}
+
+/* Animation for smooth transitions */
+* {
+  transition: box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+
+/* Hide default Sanity branding elements */
+[data-ui="AppLoadingScreen"] {
+  background: #f5f7fa !important;
+}
+
+/* Custom course card styling */
+.course-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+/* Progress indicators */
+.progress-bar {
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}

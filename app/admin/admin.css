@@ -1,0 +1,452 @@
+/* Admin Dashboard Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --uit-primary: #667eea;
+  --uit-secondary: #764ba2;
+  --uit-accent: #f093fb;
+  --uit-success: #10b981;
+  --uit-warning: #f59e0b;
+  --uit-danger: #ef4444;
+  --uit-dark: #1f2937;
+  --uit-light: #f8fafc;
+  --sidebar-width: 280px;
+
+  /* WowDash Variables */
+  --primary-50: #e4f1ff;
+  --primary-100: #bfdcff;
+  --primary-200: #95c7ff;
+  --primary-300: #6bb1ff;
+  --primary-400: #519fff;
+  --primary-500: #458eff;
+  --primary-600: #487fff;
+  --primary-700: #486cea;
+  --primary-800: #4759d6;
+  --primary-900: #4536b6;
+  --neutral-50: #f5f6fa;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #ebecef;
+  --neutral-300: #d1d5db;
+  --neutral-400: #9ca3af;
+  --neutral-500: #6b7280;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-800: #1f2937;
+  --neutral-900: #111827;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--uit-light);
+  color: var(--uit-dark);
+}
+
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: var(--sidebar-width);
+  background: linear-gradient(135deg, var(--uit-primary) 0%, var(--uit-secondary) 100%);
+  color: white;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar-menu {
+  padding: 1rem 0;
+}
+
+.sidebar-menu-item {
+  margin: 0.25rem 1rem;
+}
+
+.sidebar-menu-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.sidebar-menu-link:hover,
+.sidebar-menu-link.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateX(4px);
+}
+
+.sidebar-menu-icon {
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  background-color: var(--uit-light);
+}
+
+.main-header {
+  background: white;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-body {
+  padding: 2rem;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--uit-primary) 0%, var(--uit-secondary) 100%);
+  color: white;
+  border: none;
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--uit-primary) !important;
+}
+
+.text-secondary {
+  color: var(--uit-secondary) !important;
+}
+
+.bg-primary {
+  background-color: var(--uit-primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--uit-secondary) !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--uit-primary) 0%, var(--uit-secondary) 100%);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--uit-secondary) 0%, var(--uit-primary) 100%);
+}
+
+/* WowDash Gradient Backgrounds */
+.bg-gradient-start-1 {
+  background: linear-gradient(135deg, var(--uit-primary) 0%, var(--uit-secondary) 100%);
+}
+
+.bg-gradient-start-2 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.bg-gradient-start-3 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.bg-gradient-start-4 {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.bg-gradient-start-5 {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* WowDash Utility Classes */
+.p-20 {
+  padding: 1.25rem;
+}
+
+.p-24 {
+  padding: 1.5rem;
+}
+
+.py-16 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-24 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.mt-12 {
+  margin-top: 0.75rem;
+}
+
+.mb-12 {
+  margin-bottom: 0.75rem;
+}
+
+.gap-12 {
+  gap: 0.75rem;
+}
+
+.gap-16 {
+  gap: 1rem;
+}
+
+.gap-20 {
+  gap: 1.25rem;
+}
+
+.w-32-px {
+  width: 2rem;
+}
+
+.h-32-px {
+  height: 2rem;
+}
+
+.w-40-px {
+  width: 2.5rem;
+}
+
+.h-40-px {
+  height: 2.5rem;
+}
+
+.w-50-px {
+  width: 3.125rem;
+}
+
+.h-50-px {
+  height: 3.125rem;
+}
+
+.w-80-px {
+  width: 5rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-md {
+  font-size: 1rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.text-primary-light {
+  color: var(--neutral-600);
+}
+
+.text-secondary-light {
+  color: var(--neutral-500);
+}
+
+.bg-base {
+  background-color: var(--neutral-50);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--neutral-200);
+}
+
+.rounded-8 {
+  border-radius: 0.5rem;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+/* Color Utilities */
+.bg-primary-100 {
+  background-color: var(--primary-100);
+}
+
+.text-primary {
+  color: var(--uit-primary);
+}
+
+.text-success {
+  color: var(--uit-success);
+}
+
+.text-warning {
+  color: #fbbf24;
+}
+
+.text-danger {
+  color: var(--uit-danger);
+}
+
+.text-info {
+  color: #06b6d4;
+}
+
+.text-purple {
+  color: #8b5cf6;
+}
+
+.bg-primary {
+  background-color: var(--uit-primary);
+}
+
+.bg-success {
+  background-color: var(--uit-success);
+}
+
+.bg-warning {
+  background-color: #fbbf24;
+}
+
+.bg-danger {
+  background-color: var(--uit-danger);
+}
+
+.bg-info {
+  background-color: #06b6d4;
+}
+
+.bg-purple {
+  background-color: #8b5cf6;
+}
+
+.bg-cyan {
+  background-color: #06b6d4;
+}
+
+.bg-red {
+  background-color: var(--uit-danger);
+}
+
+.text-success-main {
+  color: var(--uit-success);
+}
+
+.text-danger-main {
+  color: var(--uit-danger);
+}
+
+/* Bootstrap Overrides */
+.card {
+  border: 1px solid var(--neutral-200);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-primary {
+  border-color: var(--uit-primary);
+  color: var(--uit-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--uit-primary);
+  border-color: var(--uit-primary);
+}
+
+.progress-bar {
+  background-color: var(--uit-primary);
+}
+
+.bg-primary-100 {
+  background-color: rgba(102, 126, 234, 0.1);
+}
+
+.bg-success-100 {
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.bg-info-100 {
+  background-color: rgba(6, 182, 212, 0.1);
+}
+
+.bg-warning-100 {
+  background-color: rgba(251, 191, 36, 0.1);
+}
+
+.bg-danger-100 {
+  background-color: rgba(239, 68, 68, 0.1);
+}
