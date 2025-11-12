@@ -23,6 +23,8 @@
     "@sanity/image-url": "^1.2.0",
     "@sanity/ui": "^3.1.11",
     "@sanity/vision": "^4.13.0",
+    "@supabase/auth-helpers-nextjs": "^0.10.0",
+    "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.77.0",
     "apexcharts": "^5.3.6",
     "bootstrap": "^5.3.8",

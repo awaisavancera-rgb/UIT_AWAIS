@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Inter } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import Chatbot from "@/components/ui/chatbot";
+import ConditionalLayout from "@/components/layout/ConditionalLayout";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -33,12 +31,7 @@ export default function RootLayout({
         className={`${outfit.variable} ${inter.variable} ${GeistSans.variable} antialiased`}
         suppressHydrationWarning
       >
-        <Header />
-        <main className="pt-24 lg:pt-28 min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <Chatbot />
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   );

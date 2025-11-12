@@ -28,17 +28,23 @@ export default function AdminDashboard() {
               
               {/* Recent Activities */}
               <div className="col-xl-4">
-                <RecentActivities />
+                <div className="fixed-height-card">
+                  <RecentActivities />
+                </div>
               </div>
               
               {/* Top Courses */}
               <div className="col-xl-6">
-                <TopCourses />
+                <div className="fixed-height-card">
+                  <TopCourses />
+                </div>
               </div>
               
               {/* Faculty Overview */}
               <div className="col-xl-6">
-                <FacultyOverview />
+                <div className="fixed-height-card">
+                  <FacultyOverview />
+                </div>
               </div>
             </div>
           </div>

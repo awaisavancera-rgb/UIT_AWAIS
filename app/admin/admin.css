@@ -2,37 +2,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --uit-primary: #667eea;
-  --uit-secondary: #764ba2;
-  --uit-accent: #f093fb;
+  --uit-primary: #000000;
+  --uit-secondary: #333333;
+  --uit-accent: #078bff;
   --uit-success: #10b981;
   --uit-warning: #f59e0b;
   --uit-danger: #ef4444;
-  --uit-dark: #1f2937;
-  --uit-light: #f8fafc;
+  --uit-dark: #000000;
+  --uit-light: #ffffff;
   --sidebar-width: 280px;
 
-  /* WowDash Variables */
-  --primary-50: #e4f1ff;
-  --primary-100: #bfdcff;
-  --primary-200: #95c7ff;
-  --primary-300: #6bb1ff;
-  --primary-400: #519fff;
-  --primary-500: #458eff;
-  --primary-600: #487fff;
-  --primary-700: #486cea;
-  --primary-800: #4759d6;
-  --primary-900: #4536b6;
-  --neutral-50: #f5f6fa;
-  --neutral-100: #f3f4f6;
-  --neutral-200: #ebecef;
+  /* Clean Theme Variables */
+  --primary-50: #f9fafb;
+  --primary-100: #f3f4f6;
+  --primary-200: #e5e7eb;
+  --primary-300: #d1d5db;
+  --primary-400: #9ca3af;
+  --primary-500: #6b7280;
+  --primary-600: #4b5563;
+  --primary-700: #374151;
+  --primary-800: #1f2937;
+  --primary-900: #000000;
+  --neutral-50: #ffffff;
+  --neutral-100: #f9fafb;
+  --neutral-200: #e5e7eb;
   --neutral-300: #d1d5db;
   --neutral-400: #9ca3af;
   --neutral-500: #6b7280;
   --neutral-600: #4b5563;
   --neutral-700: #374151;
   --neutral-800: #1f2937;
-  --neutral-900: #111827;
+  --neutral-900: #000000;
 }
 
 * {
@@ -43,8 +43,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--uit-light);
-  color: var(--uit-dark);
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .admin-wrapper {
@@ -55,7 +55,12 @@ body {
 /* Sidebar Styles */
 .sidebar {
   width: var(--sidebar-width);
-  background: linear-gradient(135deg, var(--uit-primary) 0%, var(--uit-secondary) 100%);
+  background: #000000;
+  /*background: radial-gradient(circle at top left, #078bff61 0%, rgba(7, 139, 255, 0) 40%), 
+              radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0) 60%), 
+              radial-gradient(circle at top right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%), 
+              radial-gradient(circle at bottom center, rgb(7 139 255 / 12%) 0%, rgba(7, 139, 255, 0) 80%);*/
+  background-color: #0750a3;
   color: white;
   position: fixed;
   height: 100vh;
@@ -64,6 +69,7 @@ body {
   z-index: 1000;
   overflow-y: auto;
   transition: all 0.3s ease;
+  border-right: 1px solid #e5e7eb;
 }
 
 .sidebar-header {
@@ -99,7 +105,7 @@ body {
 
 .sidebar-menu-link:hover,
 .sidebar-menu-link.active {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   color: white;
   transform: translateX(4px);
 }
@@ -113,30 +119,71 @@ body {
 .main-content {
   flex: 1;
   margin-left: var(--sidebar-width);
-  background-color: var(--uit-light);
+  background-color: #f9fafb;
 }
 
 .main-header {
-  background: white;
+  background: #ffffff;
   padding: 1rem 2rem;
   border-bottom: 1px solid #e5e7eb;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #000000;
 }
 
 .main-body {
   padding: 2rem;
 }
 
+/* Fix spacing for cards */
+.card {
+  margin-bottom: 0;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-header {
+  padding: 1rem 1.5rem;
+}
+
+/* Ensure buttons are inline with proper spacing */
+.btn {
+  white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Fix container spacing */
+.container-fluid {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.row {
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.row > * {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
 /* Dashboard Cards */
 .dashboard-card {
-  background: white;
+  background: #ffffff;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   border: 1px solid #e5e7eb;
   transition: all 0.3s ease;
+  color: #000000;
 }
 
 .dashboard-card:hover {
@@ -144,10 +191,53 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Fixed Height Cards with Scrollbar */
+.fixed-height-card {
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.fixed-height-card .dashboard-card,
+.fixed-height-card .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fixed-height-card .card-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar Styling */
+.fixed-height-card::-webkit-scrollbar,
+.fixed-height-card .card-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.fixed-height-card::-webkit-scrollbar-track,
+.fixed-height-card .card-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.fixed-height-card::-webkit-scrollbar-thumb,
+.fixed-height-card .card-body::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 10px;
+}
+
+.fixed-height-card::-webkit-scrollbar-thumb:hover,
+.fixed-height-card .card-body::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
+
 .stat-card {
-  background: linear-gradient(135deg, var(--uit-primary) 0%, var(--uit-secondary) 100%);
-  color: white;
-  border: none;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #e5e7eb;
 }
 
 .stat-card h3 {
@@ -194,33 +284,40 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--uit-primary) 0%, var(--uit-secondary) 100%);
-  border: none;
+  background: #000000;
+  border: 1px solid #000000;
+  color: white;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--uit-secondary) 0%, var(--uit-primary) 100%);
+  background: #333333;
+  border: 1px solid #333333;
 }
 
-/* WowDash Gradient Backgrounds */
+/* Black & White Backgrounds */
 .bg-gradient-start-1 {
-  background: linear-gradient(135deg, var(--uit-primary) 0%, var(--uit-secondary) 100%);
+  background: #000000;
+  color: white;
 }
 
 .bg-gradient-start-2 {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: #1f2937;
+  color: white;
 }
 
 .bg-gradient-start-3 {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: #374151;
+  color: white;
 }
 
 .bg-gradient-start-4 {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  background: #4b5563;
+  color: white;
 }
 
 .bg-gradient-start-5 {
-  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  background: #6b7280;
+  color: white;
 }
 
 /* WowDash Utility Classes */
@@ -344,11 +441,11 @@ body {
 
 /* Color Utilities */
 .bg-primary-100 {
-  background-color: var(--primary-100);
+  background-color: #f3f4f6;
 }
 
 .text-primary {
-  color: var(--uit-primary);
+  color: #000000;
 }
 
 .text-success {
@@ -372,7 +469,8 @@ body {
 }
 
 .bg-primary {
-  background-color: var(--uit-primary);
+  background-color: #000000;
+  color: white;
 }
 
 .bg-success {
@@ -413,26 +511,30 @@ body {
 
 /* Bootstrap Overrides */
 .card {
-  border: 1px solid var(--neutral-200);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #000000;
 }
 
 .btn-outline-primary {
-  border-color: var(--uit-primary);
-  color: var(--uit-primary);
+  border-color: #000000;
+  color: #000000;
+  background: transparent;
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--uit-primary);
-  border-color: var(--uit-primary);
+  background-color: #000000;
+  border-color: #000000;
+  color: white;
 }
 
 .progress-bar {
-  background-color: var(--uit-primary);
+  background-color: #000000;
 }
 
 .bg-primary-100 {
-  background-color: rgba(102, 126, 234, 0.1);
+  background-color: #f3f4f6;
 }
 
 .bg-success-100 {

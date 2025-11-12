@@ -25,7 +25,7 @@ const AdminHeader = () => {
         </div>
         
         {/* Notifications */}
-        <button className="btn btn-light position-relative">
+        <button className="btn btn-light position-relative d-inline-flex align-items-center">
           <Icon icon="solar:bell-bold" className="fs-5" />
           <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             3

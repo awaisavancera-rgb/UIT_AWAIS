@@ -55,9 +55,9 @@ const TopCourses = () => {
     <div className="card h-100">
       <div className="card-header border-bottom bg-base py-16 px-24 d-flex align-items-center justify-content-between">
         <h6 className="text-lg fw-semibold mb-0">Top Performing Courses</h6>
-        <button className="btn btn-sm btn-outline-primary">
-          <Icon icon="solar:eye-bold" className="me-1" />
+        <button className="btn btn-sm btn-outline-primary d-inline-flex align-items-center gap-2">
           View All
+          <Icon icon="solar:eye-bold" />
         </button>
       </div>
       <div className="card-body p-24">
